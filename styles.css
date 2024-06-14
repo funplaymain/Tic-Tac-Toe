@@ -1,0 +1,298 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    background: linear-gradient(45deg, #1e90ff, #00bfff, #1e90ff, #00bfff);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 40px;
+    margin-top: 60px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floating-text {
+    animation: float 3s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrows {
+    font-size: 24px;
+    margin: 0 10px;
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    0% {
+        color: #ff1493;
+        text-shadow: 0 0 10px #ff1493;
+    }
+    100% {
+        color: #00ff7f;
+        text-shadow: 0 0 10px #00ff7f;
+    }
+}
+@keyframes blinkWin {
+    0% { background-color: #00ff7f; }
+    50% { background-color: #ff1493; }
+    100% { background-color: #00ff7f; }
+}
+
+.square.blink {
+    animation: blinkWin 1s infinite;
+}
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.pixel-art1, .pixel-art2, .pixel-art3, .pixel-art4 {
+    position: absolute;
+    opacity: 0.7;
+    animation: float 6s ease-in-out infinite;
+    z-index: -1;
+}
+
+.pixel-art1 img, .pixel-art2 img, .pixel-art3 img, .pixel-art4 img {
+    width: 100px;
+}
+
+.pixel-art1 {
+    animation-duration: 8s;
+}
+
+.pixel-art2 {
+    animation-duration: 10s;
+}
+
+.pixel-art3 {
+    animation-duration: 12s;
+}
+
+.pixel-art4 {
+    animation-duration: 14s;
+}
+
+.options {
+    margin-bottom: 20px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.options button, .options select {
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    background: linear-gradient(45deg, #1e90ff, #00bfff);
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+}
+
+.options button:hover, .options select:hover {
+    background: linear-gradient(45deg, #00bfff, #1e90ff);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.75);
+}
+
+.options button:active, .options select:active {
+    background: linear-gradient(45deg, #1e90ff, #00bfff);
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.3);
+}
+
+.option-btn.selected {
+    background: linear-gradient(45deg, #ff1493, #ff69b4);
+    box-shadow: 0 0 15px rgba(255, 20, 147, 0.75);
+}
+
+
+.board-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+.square {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #333;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, text-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    text-shadow: 0 0 5px rgba(0, 0, 255, 0.7);
+}
+
+.square:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.75);
+    text-shadow: 0 0 7px rgba(0, 0, 255, 0.9);
+}
+
+.square:active {
+    background-color: #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.3);
+    text-shadow: 0 0 3px rgba(0, 0, 255, 0.5);
+}
+
+.message {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+}
+
+.scoreboard {
+    font-size: 16px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    margin-top: 20px;
+}
+
+.scoreboard p {
+    margin: 5px 0;
+}
+
+
+.restart-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: linear-gradient(45deg, #1e90ff, #00bfff);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, text-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    text-shadow: 0 0 5px rgba(0, 0, 255, 0.7);
+}
+
+.restart-btn:hover {
+    background: linear-gradient(45deg, #00bfff, #1e90ff);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.75);
+}
+
+.restart-btn:active {
+    background: linear-gradient(45deg, #1e90ff, #00bfff);
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.3);
+}
+
+/* Footer Styles */
+footer {
+    font-size: 14px;
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.back-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: linear-gradient(45deg, #1e90ff, #00bfff);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, text-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    text-shadow: 0 0 5px rgba(0, 0, 255, 0.7);
+    margin-top: 20px;
+}
+
+.back-btn:hover {
+    background: linear-gradient(45deg, #00bfff, #1e90ff);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.75);
+}
+
+.back-btn:active {
+    background: linear-gradient(45deg, #1e90ff, #00bfff);
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.3);
+}
+
+#playerNames input {
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    background: linear-gradient(45deg, #ffffff, #f0f0f0);
+    color: #333;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+#playerNames input:focus {
+    background: linear-gradient(45deg, #f0f0f0, #ffffff);
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.5);
+    transform: scale(1.05);
+    outline: none;
+}
+
+#playerNames input:hover {
+    background: linear-gradient(45deg, #e0e0e0, #f0f0f0);
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.3);
+}

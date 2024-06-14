@@ -1,0 +1,16 @@
+{
+    "name": "tic-tac-toe-pwa",
+    "short_name": "TicTacToepwa",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#1e90ff",
+    "theme_color": "#1e90ff",
+    "icons": [
+      {
+        "src": "icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ]
+  }
+  

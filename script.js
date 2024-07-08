@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
             if (gameMode === 'ai' && currentPlayer === 'O') {
-                setTimeout(makeAiMove, 1500);
+                setTimeout(makeAiMove, 500);
             }
         }
     }
